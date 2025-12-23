@@ -22,6 +22,12 @@ p {
 .logo {
   font-size: 2rem;
   cursor: default;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 80px;
 }
 
 /* Transition */
