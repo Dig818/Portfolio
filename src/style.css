@@ -74,13 +74,13 @@ nav {
   background-color: gray;
 
   transform: scaleX(0);
-  transform-origin: right; 
+  transform-origin: right;
   transition: transform 0.3s ease;
 }
 
 .nav-links li a:hover::after {
   transform: scaleX(1);
-  transform-origin: left;  
+  transform-origin: left;
 }
 
 .nav-links li a:hover {
@@ -376,6 +376,13 @@ article .icon {
   height: 100%;
 }
 
+#projects .article-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1rem;
+}
+
 #projects .btn-container {
   margin-top: auto;
   padding-top: 1.5rem;
@@ -384,18 +391,34 @@ article .icon {
 .color-container {
   border-color: rgb(163, 163, 163);
   background-color: rgb(250, 250, 250);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.color-container:hover .project-title {
+  color: rgb(0, 0, 0);
 }
 
 .project-img {
   border-radius: 2rem;
   width: 100%;
-  height: 200px;
+  height: 300px;
+  min-height: 300px;
   object-fit: cover;
 }
 
 .project-title {
   margin: 1rem;
-  color: black;
+  color: rgb(53, 53, 53);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .project-btn {
@@ -455,11 +478,11 @@ article .icon {
 
 /* FOOTER SECTION */
 
-footer{
+footer {
   height: 26vh;
   margin: 0 1rem;
 }
 
-footer p{
+footer p {
   text-align: center;
 }
