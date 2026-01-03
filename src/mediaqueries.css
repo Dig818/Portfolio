@@ -209,4 +209,13 @@
   #projects {
     padding-bottom: 3rem;
   }
+
+  /* Scroll to top button mobile */
+  .scroll-top-btn {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.25rem;
+  }
 }

@@ -227,6 +227,15 @@ section {
 .icon {
   cursor: pointer;
   height: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.arrow:hover {
+  transform: scale(1.1);
 }
 
 /* BUTTONS */
@@ -485,4 +494,50 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/* SCROLL ANIMATIONS */
+.reveal {
+  position: relative;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* SCROLL TO TOP ARROW */
+#scroll-up-arrow {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  transform: rotate(180deg);
+}
+
+#scroll-up-arrow:hover {
+  transform: rotate(180deg) scale(1.1);
+}
+
+#scroll-up-arrow.show {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: rotate(180deg) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(180deg) translateY(0);
+  }
 }
