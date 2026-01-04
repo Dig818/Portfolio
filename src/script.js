@@ -6,6 +6,21 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
+// Close menu when clicking outside
+document.addEventListener("click", (event) => {
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
+
+  if (
+    menu.classList.contains("open") &&
+    !menu.contains(event.target) &&
+    !icon.contains(event.target)
+  ) {
+    menu.classList.remove("open");
+    icon.classList.remove("open");
+  }
+});
+
 // SCROLL ANIMATION
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

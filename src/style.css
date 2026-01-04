@@ -105,6 +105,7 @@ nav {
   height: 24px;
   width: 30px;
   cursor: pointer;
+  z-index: 101; /* Keep icon above menu */
 }
 
 .hamburger-icon span {
@@ -115,21 +116,45 @@ nav {
 }
 
 .menu-links {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   right: 0;
-  background-color: white;
-  width: fit-content;
-  max-height: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  max-height: none; /* Resetting override */
+}
+
+/* Close button inside menu */
+.menu-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.menu-close-btn:hover {
+  color: gray;
 }
 
 .menu-links a {
   display: block;
-  padding: 10px;
+  padding: 1.5rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: black;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -140,7 +165,7 @@ nav {
 }
 
 .menu-links.open {
-  max-height: 300px;
+  transform: translateX(0);
 }
 
 .hamburger-icon.open span:first-child {
@@ -483,6 +508,12 @@ article .icon {
 
 .email-icon {
   height: 2.6rem;
+}
+
+/* WRAPPER FOR PROJECT CARD ANIMATIONS */
+.details-wrapper {
+  flex: 1;
+  height: 100%;
 }
 
 /* FOOTER SECTION */
